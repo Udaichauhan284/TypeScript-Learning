@@ -1,0 +1,22 @@
+//What Typescript does :
+// Static Checking - analyze the code as we type. That's it
+
+-- Typescript convert to javascript
+-- it is a Superset of javascript
+-- it is developement tood. your project still run on JS
+
+## Types
+Number, String, Boolean, Null, Undefined, Void, Object, Array, Tuples, ... , Any, Never, unknown
+
+## Primitive Data Type: 
+-- number, string, boolean
+
+## Any
+- TS also has a special type any, hat you can use whenever you dont want a particular value to cause typechecking errors.
+
+## Situations
+A function accepts 2 number
+A function  returns a string
+
+## Syntax
+let variableName : type = value
