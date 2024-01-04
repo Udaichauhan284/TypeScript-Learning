@@ -25,4 +25,16 @@ let loginUser = (name: string, email :string, isPaid: boolean = false) => {}
 //     return false;
 //   }
 // }
+
+const heros = ["ironman", "superman", "batman"];
+
+console.log(heros.map((hero): string => {
+  return `hero is ${hero}`
+}));
+
+//function return type is void
+function consoleError(errmsg: string): void {
+  console.log(errmsg);
+}
+
 export {}
