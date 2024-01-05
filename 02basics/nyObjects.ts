@@ -27,4 +27,13 @@ function createUser1(user: User){
 }
 createUser1({name : "ud", email : "ud@ud.com", isActive: true});
 
+//Readonly
+type USER = {
+  readonly _id: string,
+  name: string,
+  email: string,
+  isActive: boolean,
+  //? oprional
+  cardDetails?: number
+}
 export {}
