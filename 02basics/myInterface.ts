@@ -32,7 +32,18 @@ interface Rectangle {
   height : number,
   width : number
 }
+//re-opening of interface
+interface Rectangle {
+  color : string
+}
+//extending
+interface Shape extends Rectangle {
+  shapeForm : string,
+  shapeColor : string,
+}
+
 const rectangle: Rectangle = {
   height : 20,
-  width : 30
+  width : 30,
+  color : "red"
 };
