@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 interface item {
   id: number;
@@ -9,6 +9,7 @@ export const TodoApp: React.FC = () => {
   const [todos, setTodos] = useState<item[]>([]);
 
   const [input, setInput] = useState<string>("");
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleToggle = (id: number) => {
     setTodos(
@@ -21,12 +22,13 @@ export const TodoApp: React.FC = () => {
     );
   };
 
-
   const handleClick = () => {
     const newTodo: item = {id : Date.now(), text : input, completed: false};
     setTodos([...todos, newTodo]);
-    setInput(" ");
-  }
+    if(inputRef.current){
+      inputRef.current.value = "";
+    }
+  };
 
   return (
     <div className="flex justify-center items-center h-screen bg-slate-500">
@@ -53,6 +55,7 @@ export const TodoApp: React.FC = () => {
           placeholder="Add Item "
           className="border-2 border-gray-300 p-2 mr-2 focus:outline-none focus:border-indigo-500 mt-10 text-xl"
           onChange={(e) => setInput(e.currentTarget.value)}
+          ref={inputRef}
         />
         <button
           className="bg-indigo-500 text-white px-6 py-2 rounded hover:bg-indigo-700 focus:outline-none focus:shadow-outline mt-4 mb-8 text-lg" onClick={handleClick}>
